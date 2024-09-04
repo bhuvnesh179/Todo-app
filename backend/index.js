@@ -1,7 +1,7 @@
 const express = require("express");
+const { createTodo, updateTodo } = require("./type");
+const { todo } = require("./db");
 const app = express();
-import { todo } from "./db";
-import { createTodo, updateTodo } from "./type";
 
 app.use(express.json());
 
@@ -17,7 +17,7 @@ app.post("/todo", async function(req, res){
    await todo.create({
         title: createPayload.title,
         description: createPayload.description,
-        completed: false;
+        completed: false
     })
     res.json({
         msg: "Todo created"
@@ -40,12 +40,14 @@ app.put("/completed", async function(req, res){
         })
         return;
     }
-    await todo.update({
+    await todo.updateOne({
         _id: req.body.id
-    },{
+    }, {
         completed: true
     })
 
+
+    
     res.json({
         msg: "Todo marked as completed."
     })
