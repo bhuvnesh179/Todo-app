@@ -1,3 +1,5 @@
+import { Todos } from "./Todos";
+
 export function CreateTodo(){
     return <div>
         <input type="text" placeholder="Title"></input>
@@ -8,6 +10,9 @@ export function CreateTodo(){
         <br></br>
 
         <button>Add a Todo</button>
+        <br></br>
+        <br></br>
 
+        
     </div>
 }

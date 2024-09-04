@@ -10,8 +10,21 @@ function App() {
 
   return (
     <div>
-      <CreateTodo></CreateTodo>
-      <Todos></Todos>
+      <CreateTodo/>
+      
+      <Todos todos={[
+        {
+          title: "asd",
+          description: "adfsdf",
+          completed: false,
+        },
+        {
+          title: "afaf",
+          description: "afa",
+          completed: false,
+        }
+
+      ]} />
     </div>
   )
 }
